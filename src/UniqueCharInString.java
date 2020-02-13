@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
@@ -14,6 +15,21 @@ public class UniqueCharInString {
             buffer.append(itr.next());
         }
         return buffer.toString();
+    }
+
+    public String getUniqueCharactersInString1(String str){
+        ArrayList<Character> characterArrayList = new ArrayList<>();
+        for(int i =0; i< str.length(); i++){
+            if(!characterArrayList.contains(str.charAt(i))){
+                characterArrayList.add(str.charAt(i));
+            }
+        }
+        StringBuffer uniqueCharBuffer = new StringBuffer();
+        for(Character character : characterArrayList){
+            uniqueCharBuffer.append(character);
+        }
+
+        return uniqueCharBuffer.toString();
     }
     public static void main(String[] args){
         UniqueCharInString obj = new UniqueCharInString();
